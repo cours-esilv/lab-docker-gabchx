@@ -1,0 +1,20 @@
+version: '3'
+services:
+  backend:
+    image: gabchx/lab-docker:latest
+    ports:
+      - "5001:5000"
+    environment:
+      - CURRENT_ENVIRONMENT=development
+    volumes:
+      - backdata:/app/data
+  
+  frontend:
+    image: gabchx/lab_docker_front:latest
+    ports:
+      - "8080:80"
+    environment:
+      - WS_BACK_URL=http://localhost:5001
+
+volumes:
+  backdata:
