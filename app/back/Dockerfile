@@ -15,6 +15,3 @@ COPY . .
 
 # Étape 6 : Définissez la commande à exécuter lorsque le conteneur est lancé
 CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
-
-
-docker build -t lab-docker .
